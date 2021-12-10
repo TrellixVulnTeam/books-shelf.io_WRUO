@@ -1,0 +1,33 @@
+<button class="close" mat-button (click)="onNoClick()">&#10006;</button>
+<h3 mat-dialog-title class="title">{{title}} <button mat-icon-button class="example-icon" (click)="onWishToggle()">
+    <mat-icon>{{book.isWished ? 'bookmark' : 'bookmark_border'}} </mat-icon>
+  </button></h3>
+<div mat-dialog-content>
+
+  <mat-grid-list cols="1" rowHeight="220px">
+    <mat-grid-tile>
+      <div class="img-wrapper">
+        <img
+        mat-card-image
+        *ngIf="book.volumeInfo.imageLinks?.thumbnail"
+        src={{book.volumeInfo.imageLinks?.thumbnail}}
+        alt="{{book.volumeInfo.title}}">
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="book-details">
+      <mat-card-header>
+        <mat-card-title>Author</mat-card-title>
+        <mat-card-subtitle>
+          <span style="padding: 10px;" *ngFor="let aut of book.volumeInfo.authors">{{aut}}</span></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-header>
+        <mat-card-title>Title</mat-card-title>
+        <mat-card-subtitle>{{book.volumeInfo.title}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-header>
+        <mat-card-title>Desc</mat-card-title>
+        <mat-card-subtitle>{{book.volumeInfo.description}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

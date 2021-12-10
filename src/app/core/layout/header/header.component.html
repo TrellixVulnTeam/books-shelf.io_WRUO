@@ -1,0 +1,21 @@
+<header>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Welcome {{user$ | async}}</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/books">
+        <mat-icon>book</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+        routerLink="/wishlist">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <div id="progress-bar" class="progress-bar" *ngIf="isUpdating$ | async">
+        <span class="progress-bar__label">LOADING</span>
+        <span class="progress-bar__bar">
+          <span class="progress-bar__progress"></span>
+        </span>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

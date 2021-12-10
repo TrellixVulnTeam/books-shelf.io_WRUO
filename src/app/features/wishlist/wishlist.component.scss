@@ -1,0 +1,12 @@
+.img-wrapper {
+  width: 50px;
+  height: 76px;
+  background-color: lightgray;
+  border-radius: 5px;
+  margin: 10px;
+  img {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  }
+}

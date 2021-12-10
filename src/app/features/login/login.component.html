@@ -1,0 +1,17 @@
+<form class="login__form">
+  <div class="login__form-title">
+    <h3>Log In</h3>
+  </div>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput [formControl]="userName">
+    <mat-error *ngIf="userName.hasError('required')">
+      Cant be empty
+    </mat-error>
+  </mat-form-field>
+
+  <div class="login__bottom">
+    <button mat-button color="accent" [disabled]="!userName.value" (click)="onSubmit()" type="submit">Sign In</button>
+  </div>
+</form>
